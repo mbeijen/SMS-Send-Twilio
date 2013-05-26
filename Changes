@@ -1,6 +1,7 @@
 Revision history for SMS-Send-Twilio
 
 {{$NEXT}}
+  - Added dependency on 'parent' module for perls < 5.10.1.
 
 0.10  2013-05-22 15:40:06 EDT
-        - Initial release
+  - Initial release
