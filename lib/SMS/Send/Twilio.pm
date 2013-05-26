@@ -23,22 +23,22 @@ SMS::Send::Twilio - SMS::Send backend for Twilio API
   use SMS::Send;
   # Create an object. There are three required values:
   my $sender = SMS::Send->new('Twilio',
-  	_accountsid => 'ACb657bdcb16f06893fd127e099c070eca',
-  	_auth_token => 'b857f7afe254fa86c689648447e04cff',
-  	_from       => '+15005550006',
-  	);
+    _accountsid => 'ACb657bdcb16f06893fd127e099c070eca',
+    _auth_token => 'b857f7afe254fa86c689648447e04cff',
+    _from       => '+15005550006',
+    );
   
   # Send a message to me
   my $sent = $sender->send_sms(
-  	text => 'Messages have a limit of 160 chars',
-  	to   => '+31645742418',
-  	);
+    text => 'Messages have a limit of 160 chars',
+    to   => '+31645742418',
+    );
   
   # Did it send?
   if ( $sent ) {
-  	print "Sent test message\n";
+    print "Sent test message\n";
   } else {
-  	print "Test message failed\n";
+    print "Test message failed\n";
   }
 
 =head1 DESCRIPTION
@@ -51,10 +51,10 @@ SMS::Send::Twilio is an SMS::Send driver for the Twilio web service.
 
   # Create a new sender using this driver
   my $sender = SMS::Send->new('Twilio',
-  	_accountsid => 'ACb657bdcb16f06893fd127e099c070eca',
-  	_auth_token => 'b857f7afe254fa86c689648447e04cff',
-  	_from       => '+15005550006',
-  	);
+    _accountsid => 'ACb657bdcb16f06893fd127e099c070eca',
+    _auth_token => 'b857f7afe254fa86c689648447e04cff',
+    _from       => '+15005550006',
+  );
 
 The C<new> constructor takes three parameters, which should be passed
 through from the L<SMS::Send> constructor.
@@ -64,11 +64,11 @@ through from the L<SMS::Send> constructor.
 It's really easy; if it returns a true value, sending the message was OK.
 If not we'd see an error message on STDERR.
 
-    # Send a message to me
+  # Send a message to me
     my $sent = $sender->send_sms(
-        text => 'Messages have a limit of 160 chars',
-  	    to   => '+31645742418',
-    );
+    text => 'Messages have a limit of 160 chars',
+    to   => '+31645742418',
+  );
 
 =cut
 
