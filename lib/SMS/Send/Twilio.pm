@@ -10,7 +10,7 @@ use WWW::Twilio::API;
 
 use parent qw(SMS::Send::Driver);
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 =encoding utf-8
 

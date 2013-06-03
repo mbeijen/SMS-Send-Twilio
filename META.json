@@ -61,9 +61,6 @@
          "web" : "https://github.com/mbeijen/SMS-Send-Twilio"
       }
    },
-   "version" : "0.11",
-   "x_contributors" : [
-      "Michiel Beijen <michiel.beijen@otrs.com>"
-   ]
+   "version" : "0.12"
 }
 
