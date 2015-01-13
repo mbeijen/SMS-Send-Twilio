@@ -1,6 +1,11 @@
-/SMS-Send-Twilio-*
-/.build
-/_build*
-/Build
-MYMETA.*
-!META.json
+*.bak
+MYMETA.json
+MYMETA.yml
+META.json
+META.yml
+Makefile
+Makefile.old
+blib/
+SMS-Send-Twilio-*
+pm_to_blib
+

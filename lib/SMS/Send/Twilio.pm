@@ -5,12 +5,13 @@ use warnings;
 
 use 5.008_005;
 
+use Carp;
 use JSON::PP;
 use WWW::Twilio::API;
 
 use parent qw(SMS::Send::Driver);
 
-our $VERSION = '0.14';
+our $VERSION = '0.15';
 
 =encoding utf-8
 
@@ -26,13 +27,13 @@ SMS::Send::Twilio - SMS::Send backend for Twilio API
     _accountsid => 'ACb657bdcb16f06893fd127e099c070eca',
     _authtoken  => 'b857f7afe254fa86c689648447e04cff',
     _from       => '+15005550006',
-    );
+  );
   
   # Send a message to me
   my $sent = $sender->send_sms(
     text => 'Messages have a limit of 160 chars',
     to   => '+31645742418',
-    );
+  );
   
   # Did it send?
   if ( $sent ) {
@@ -65,7 +66,7 @@ It's really easy; if it returns a true value, sending the message was OK.
 If not we'd see an error message on STDERR.
 
   # Send a message to me
-    my $sent = $sender->send_sms(
+  my $sent = $sender->send_sms(
     text => 'Messages have a limit of 160 chars',
     to   => '+31645742418',
   );
@@ -79,7 +80,7 @@ sub new {
     # check required parameters
     for my $param (qw ( _accountsid _from _authtoken )) {
         exists $params{$param}
-          or die $class . "->new requires $param parameter\n";
+          or croak $class . "->new requires $param parameter\n";
     }
 
     my $self = \%params;

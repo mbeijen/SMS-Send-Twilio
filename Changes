@@ -1,6 +1,9 @@
 Revision history for SMS-Send-Twilio
 
-{{$NEXT}}
+0.15  2015-01-13
+  - No more Dist::Zilla.
+  - More tests.
+  - Use croak instead of die.
 
 0.14  2013-06-07 03:21:08 EDT
   - Corrected POD, fixes Github issue #1 (rpnoble).

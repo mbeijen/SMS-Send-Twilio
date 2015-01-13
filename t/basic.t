@@ -1,8 +1,8 @@
 use strict;
-use Test::More;
-use SMS::Send::Twilio;
+use warnings;
 
-# replace with the actual test
-ok 1;
+use Test::More;
+
+BEGIN { use_ok('SMS::Send::Twilio'); }
 
 done_testing;
