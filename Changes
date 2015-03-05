@@ -1,5 +1,8 @@
 Revision history for SMS-Send-Twilio
 
+0.16  2015-03-05
+  - Corrected MANIFEST, added test for that.
+
 0.15  2015-01-13
   - No more Dist::Zilla.
   - More tests.

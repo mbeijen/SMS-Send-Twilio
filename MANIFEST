@@ -1,13 +1,12 @@
-.mailmap
 Changes
 examples/simplesend.pl
 lib/SMS/Send/Twilio.pm
 LICENSE
 Makefile.PL
 MANIFEST			This list of files
+MANIFEST.SKIP
 README.md
-SMS-Send-Twilio-0.14/META.json
-SMS-Send-Twilio-0.14/META.yml
 t/basic.t
+t/distmanifest.t
 t/installed-drivers.t
 t/twilio.t
