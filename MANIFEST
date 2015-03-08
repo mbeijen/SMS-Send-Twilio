@@ -9,4 +9,5 @@ README.md
 t/basic.t
 t/checkmanifest.t
 t/installed-drivers.t
+t/pod.t
 t/twilio.t
