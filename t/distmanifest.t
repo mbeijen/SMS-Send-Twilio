@@ -1,7 +1,7 @@
 use Test::More;
-eval 'use Test::DistManifest';
+eval 'use Test::CheckManifest';
 if ($@) {
-  plan skip_all => 'Test::DistManifest required to test MANIFEST';
+  plan skip_all => 'Test::CheckManifest required to test MANIFEST';
 }
 
-manifest_ok();
+ok_manifest();
