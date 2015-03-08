@@ -1,5 +1,8 @@
 Revision history for SMS-Send-Twilio
 
+0.17  2015-03-08
+  - Moved MANIFEST test to Test::CheckManifest because of RT102636.
+
 0.16  2015-03-05
   - Corrected MANIFEST, added test for that.
 

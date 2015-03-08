@@ -7,6 +7,6 @@ MANIFEST			This list of files
 MANIFEST.SKIP
 README.md
 t/basic.t
-t/distmanifest.t
+t/checkmanifest.t
 t/installed-drivers.t
 t/twilio.t
