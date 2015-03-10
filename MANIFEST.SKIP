@@ -1,7 +1,5 @@
+#!include_default
 \B\.git\b
-^blib\/
-pm_to_blib
-\~$
 ^Makefile(\.old)?$
 .gitignore
 ^SMS-Send-Twilio-\d
