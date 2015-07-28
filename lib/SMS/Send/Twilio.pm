@@ -123,7 +123,11 @@ sub send_sms {
             return 0;
         }
     }
-
+    else {
+      print STDERR "$response->{code} $response->{message}\n";
+      return 0;
+    }
+  
     return 0;
 }
 
