@@ -11,7 +11,7 @@ use WWW::Twilio::API;
 
 use parent qw(SMS::Send::Driver);
 
-our $VERSION = '0.17';
+our $VERSION = '0.18';
 
 =encoding utf-8
 
@@ -80,7 +80,7 @@ sub new {
     # check required parameters
     for my $param (qw ( _accountsid _from _authtoken )) {
         exists $params{$param}
-          or croak $class . "->new requires $param parameter\n";
+          or croak $class . "->new requires $param parameter";
     }
 
     my $self = \%params;
@@ -90,7 +90,7 @@ sub new {
     $self->{twilio} = WWW::Twilio::API->new(
         AccountSid => $self->{_accountsid},
         AuthToken  => $self->{_authtoken},
-    ) or die $class . "->new can't set up connection: $!\n";
+    ) or croak $class . "->new can't set up connection: $!";
 
     return $self;
 }
@@ -119,12 +119,11 @@ sub send_sms {
     elsif ( $response->{code} == '400' ) {
         my $result = JSON::PP->new->utf8->decode( $response->{content} );
         if ( $result->{message} ) {
-            print STDERR "$result->{message}\n";
-            return 0;
+            croak "$result->{message}";
         }
     }
 
-    return 0;
+    croak "Can't send SMS: $response->{code} $response->{message}";
 }
 
 =head1 AUTHOR
@@ -133,7 +132,7 @@ Michiel Beijen E<lt>michiel.beijen@gmail.comE<gt>
 
 =head1 COPYRIGHT
 
-Copyright 2013- Michiel Beijen
+Copyright 2013-2015 Michiel Beijen
 
 =head1 LICENSE
 
