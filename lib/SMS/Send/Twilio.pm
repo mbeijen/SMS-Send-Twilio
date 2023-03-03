@@ -55,10 +55,14 @@ SMS::Send::Twilio is an SMS::Send driver for the Twilio web service.
     _accountsid => 'ACb657bdcb16f06893fd127e099c070eca',
     _authtoken  => 'b857f7afe254fa86c689648447e04cff',
     _from       => '+15005550006',
+    _utf8       => 1,
   );
 
 The C<new> constructor takes three parameters, which should be passed
 through from the L<SMS::Send> constructor.
+
+The fourth parameter, _utf8, is optional and if true, will cause the text
+to be escaped with URI::Escape::uri_escape_utf8 rather than URI::Escape::uri_escape
 
 =head2 send_sms
 
@@ -90,6 +94,7 @@ sub new {
     $self->{twilio} = WWW::Twilio::API->new(
         AccountSid => $self->{_accountsid},
         AuthToken  => $self->{_authtoken},
+        utf8       => $self->{_utf8},
     ) or croak $class . "->new can't set up connection: $!";
 
     return $self;
